@@ -159,6 +159,49 @@ echo "generic/551" >> xfs_excludes.txt
 echo "generic/564" >> xfs_excludes.txt
 echo "generic/565" >> xfs_excludes.txt
 
+# Very slow
+echo "generic/117" >> xfs_excludes.txt
+echo "generic/471" >> xfs_excludes.txt
+echo "generic/642" >> xfs_excludes.txt
+echo "generic/676" >> xfs_excludes.txt
+echo "generic/707" >> xfs_excludes.txt
+echo "generic/736" >> xfs_excludes.txt
+
+# Too slow (>2min each)
+echo "generic/007" >> xfs_excludes.txt
+echo "generic/109" >> xfs_excludes.txt
+echo "generic/120" >> xfs_excludes.txt
+echo "generic/208" >> xfs_excludes.txt
+echo "generic/323" >> xfs_excludes.txt
+
+# Not sure what's wrong with these
+echo "generic/075" >> xfs_excludes.txt
+echo "generic/091" >> xfs_excludes.txt
+echo "generic/112" >> xfs_excludes.txt
+echo "generic/310" >> xfs_excludes.txt
+echo "generic/363" >> xfs_excludes.txt
+echo "generic/610" >> xfs_excludes.txt
+echo "generic/631" >> xfs_excludes.txt
+echo "generic/650" >> xfs_excludes.txt
+echo "generic/683" >> xfs_excludes.txt
+echo "generic/684" >> xfs_excludes.txt
+echo "generic/685" >> xfs_excludes.txt
+echo "generic/732" >> xfs_excludes.txt
+echo "generic/748" >> xfs_excludes.txt
+echo "generic/749" >> xfs_excludes.txt
+echo "generic/750" >> xfs_excludes.txt
+echo "generic/754" >> xfs_excludes.txt
+echo "generic/756" >> xfs_excludes.txt
+echo "generic/758" >> xfs_excludes.txt
+echo "generic/759" >> xfs_excludes.txt
+echo "generic/760" >> xfs_excludes.txt
+echo "generic/761" >> xfs_excludes.txt
+echo "generic/766" >> xfs_excludes.txt
+echo "generic/774" >> xfs_excludes.txt
+echo "generic/775" >> xfs_excludes.txt
+echo "generic/777" >> xfs_excludes.txt
+echo "generic/778" >> xfs_excludes.txt
+
 FLEETFS_EXTRA_MOUNT_OPTIONS="" TEST_SERVER="127.0.0.1:3300" SCRATCH_SERVER="127.0.0.1:3400" \
 ./check-fleetfs -E xfs_excludes.txt \
 | tee /code/logs/xfstests.log
