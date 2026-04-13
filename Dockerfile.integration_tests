@@ -2,10 +2,7 @@ FROM ubuntu:24.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-# ubuntu:24.04 only enables main+restricted by default; universe is needed for fuse, bsdmainutils, dbench, etc.
-RUN sed -i 's/Components: main restricted/Components: main restricted universe multiverse/g' /etc/apt/sources.list.d/ubuntu.sources
-
-RUN apt update && apt install -y git build-essential autoconf curl cmake fuse bc libtool \
+RUN apt update && apt install -y git build-essential autoconf pkg-config curl cmake fuse bc libtool \
   uuid-dev xfslibs-dev libattr1-dev libacl1-dev libaio-dev attr acl quota bsdmainutils dbench psmisc
 
 RUN adduser --disabled-password --gecos '' fsgqa
